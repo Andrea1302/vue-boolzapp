@@ -93,6 +93,16 @@ var applicazione = new Vue ({
                 ]
             }
         ]
+    },
+    methods : {
+        activeChat(iterazione){
+            this.contatti.find((element)=>{
+                element.visibile = false
+            })
+             if (this.contatti[iterazione].visibile === false ){
+                this.contatti[iterazione].visibile = true
+            }
+        }
     }
 
 

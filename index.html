@@ -71,7 +71,7 @@
 
                 <!-- section chat  -->
                 <section id="container_chat">
-                    <div class="chat" v-for="(contatto,i) in contatti" :key="i">
+                    <div @click="activeChat(i)" class="chat" v-for="(contatto,i) in contatti" :key="i" >
                         <!-- immagine chat utente  -->
                         <img class="img_chat" :src="contatto.immagine" alt="contatto.nome" >
                         <div id="messaggio_e_data">
