@@ -38,34 +38,88 @@ body{
 #navbar{
     height: 100%;
     width: 35%;
-    /* debug */
-    background-color: rgba(135, 207, 235, 0.144);
+    
 }
-
+/* classe generale img  */
+.avatar{
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
     /* nome utente  */
     #nome_utente{
         width: 100%;
         height: 10%;
-        /* debug */
-        background-color: rgba(0, 0, 0, 0.199);
+        background-color: rgb(223, 223, 223);
+        display: flex;
+        justify-content: space-between;
     }
+        #nome_e_immagine{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left:10px ;
+        }
+        #nome{
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        #icone{
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .icone{
+            color: grey;
+            margin: 0 10px;
+            cursor: pointer;
+        }
 
     /* notifiche  */
     #notifiche{
         width: 100%;
         height: 15%;
-        /* debug */
-        background-color: rgba(7, 45, 151, 0.5);
+        background-color: rgb(128, 199, 240);
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
     }
+        #notifiche_audio{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: white;
+            margin-right: 10px;
+        }
+        #audio{
+            color: rgb(128, 199, 240);
+        }
+        #attiva_notifiche{
+            color: rgba(0, 0, 0, 0.589);
+            font-size: .8rem;
+        }
 
     /* ricerca  */
     #ricerca{
+        display: flex;
+        align-items: center;
         width: 100%;
         height: 5%;
-        /* debug */
-        background-color: rgba(124, 196, 156, 0.5);
+        background-color: white;
+        padding: 10px;
     }
-
+        #icon_search{
+            padding: 5px;
+        }
+        #input_search{
+            width: 90%;
+            height: 30px;
+            border-left: none;
+            border-style: none;
+        }
     /* sezione chat  */
     #container_chat{
         width: 100%;
@@ -75,10 +129,30 @@ body{
         #container_chat .chat{
             width: 100%;
             height: 80px;
-            background-color: rgba(0, 255, 255, 0.575);
             border-top: 1px solid #ccc;
+            display: flex;
+            padding: 10px 5px 10px 20px;
         }
-
+        .img_chat{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .chat p{
+            font-size: .7rem;
+            color: #ccc;
+        }
+        #messaggio_e_data{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        #data_now{
+            font-size: .7rem;
+            color: #ccc;
+        }
+        
 
 
 /* parte visualizzazione messaggi  */
@@ -87,22 +161,21 @@ body{
     width: 65%;
     /* debug */
     background-color: rgba(216, 191, 216, 0.342);
+    border-left:1px solid #ccc ;
 }
 
     /* chat aperta con?*/
     #open_chat_name{
         width: 100%;
         height: 10%;
-        /* debug */
-        background-color: rgba(184, 135, 11, 0.418);
+        background-color: rgb(223, 223, 223);;
     }
 
     /* visualizzazione chat  */
     #visual_open_chat{
         width: 100%;
         height: 85%;
-        /* debug */
-        background-color: darkgrey;
+        background-image: url(../img/whatzapp.jpg);
     }
 
     /* sezione invio messaggi  */
