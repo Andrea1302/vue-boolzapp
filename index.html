@@ -36,7 +36,7 @@
                         <span id="nome">Nome utente</span>
                     </div>
 
-                    <div id="icone">
+                    <div class="icone_nav">
                         <i class="icone fas fa-power-off"></i>
                         <i class="icone fas fa-comment-alt"></i>
                         <i class="icone fas fa-ellipsis-v"></i>
@@ -98,10 +98,32 @@
             </aside>
 
             <!-- parte centrale , chat  -->
-            <main id="main_chat">
+            <main id="main_chat" > 
                 <!-- chat aperta con? -->
                 <section id="open_chat_name">
+                    <div id="open_chat_left" v-if="contatto.visibile === true"  v-for="(contatto,i) in contatti" :key="i">
+                        <img class="img_chat" :src="contatto.immagine" :alt="contatto.nome">
 
+                        <div>
+                            <div>
+                                {{contatto.nome}}
+                            </div>
+    
+                            <div v-for="element in contatto.messages" v-if="element.status === 'received'" id="ultimo_accesso">
+                               Ultimo accesso oggi alle {{element.data}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="icone_nav">
+
+                        <i class="icone fas fa-search"></i>
+                        <i class="icone fas fa-paperclip"></i>
+                        <i class="icone fas fa-ellipsis-v"></i>
+
+                        
+                    </div>
+          
                 </section>
 
                 <!-- visualizzazione chat  -->
