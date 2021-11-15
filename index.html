@@ -127,14 +127,21 @@
                 </section>
 
                 <!-- visualizzazione chat  -->
-                <section id="visual_open_chat">
+                <section id="visual_open_chat" v-for="(contatto,i) in contatti" v-if="contatto.visibile === true" :key="i">
 
+                    <div v-for="(messaggio,i) in contatto.messages" :id="messaggio.status === 'sent' ? id='sent' : 'received' ">
+                        <div>
+                            <span>{{messaggio.text}}</span>
+                            <div class="data_invio"> {{messaggio.data}}</div>
+                        </div>
+                    </div>
+                    
                 </section>
 
 
                 <!-- sezione input invio messaggi -->
                 <section id="send_message">
-
+                    
                 </section>
             </main>
 

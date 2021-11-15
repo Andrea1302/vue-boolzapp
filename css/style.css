@@ -191,8 +191,42 @@ body{
         width: 100%;
         height: 80%;
         background-image: url(../img/whatzapp.jpg);
+        padding: 40px;
+        overflow-y: scroll;
     }
 
+        #sent{
+            width: 250px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #e5ffcc;
+            position: relative;
+            left: 550px;
+        }
+        #received{
+            width: 250px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+
+        }
+        /* .messaggi{
+            width: 250px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .messaggi.inviati{
+        }
+        .messaggi.ricevuti{
+        } */
+        .data_invio{
+            text-align: end;
+            font-size: .7rem;
+            color: #ccc;
+        }
     /* sezione invio messaggi  */
     #send_message{
         width: 100%;
