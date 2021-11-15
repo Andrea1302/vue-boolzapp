@@ -21,6 +21,8 @@ body{
     height: 80vh;
 }
 
+
+/* Parte principale  */
 .container{
     height: 90vh;
     position: absolute;
@@ -28,4 +30,85 @@ body{
     background-color: white;
     width: 94%;
     left: 3%;
+    display: flex;
 }
+
+
+/* parte sinistra ( nav) */
+#navbar{
+    height: 100%;
+    width: 35%;
+    /* debug */
+    background-color: rgba(135, 207, 235, 0.144);
+}
+
+    /* nome utente  */
+    #nome_utente{
+        width: 100%;
+        height: 10%;
+        /* debug */
+        background-color: rgba(0, 0, 0, 0.199);
+    }
+
+    /* notifiche  */
+    #notifiche{
+        width: 100%;
+        height: 15%;
+        /* debug */
+        background-color: rgba(7, 45, 151, 0.5);
+    }
+
+    /* ricerca  */
+    #ricerca{
+        width: 100%;
+        height: 5%;
+        /* debug */
+        background-color: rgba(124, 196, 156, 0.5);
+    }
+
+    /* sezione chat  */
+    #container_chat{
+        width: 100%;
+        overflow-y: scroll;
+        height: 70%;
+    }
+        #container_chat .chat{
+            width: 100%;
+            height: 80px;
+            background-color: rgba(0, 255, 255, 0.575);
+            border-top: 1px solid #ccc;
+        }
+
+
+
+/* parte visualizzazione messaggi  */
+#main_chat{
+    height: 100%;
+    width: 65%;
+    /* debug */
+    background-color: rgba(216, 191, 216, 0.342);
+}
+
+    /* chat aperta con?*/
+    #open_chat_name{
+        width: 100%;
+        height: 10%;
+        /* debug */
+        background-color: rgba(184, 135, 11, 0.418);
+    }
+
+    /* visualizzazione chat  */
+    #visual_open_chat{
+        width: 100%;
+        height: 85%;
+        /* debug */
+        background-color: darkgrey;
+    }
+
+    /* sezione invio messaggi  */
+    #send_message{
+        width: 100%;
+        height: 5%;
+        /* debug */
+        background-color: darkslategrey;
+    }
