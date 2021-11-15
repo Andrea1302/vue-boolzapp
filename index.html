@@ -32,7 +32,7 @@
                 <!-- section nome utente  -->
                 <section id="nome_utente">
                     <div id="nome_e_immagine">
-                        <img class="avatar" src="img/avatar_io.jpg" alt="avatar_io">
+                        <img class="avatar" src="img/avatar_4.jpg" alt="avatar4">
                         <span id="nome">Nome utente</span>
                     </div>
 
@@ -109,7 +109,7 @@
                                 {{contatto.nome}}
                             </div>
     
-                            <div v-for="element in contatto.messages" v-if="element.status === 'received'" id="ultimo_accesso">
+                            <div v-for="element in contatto.messages" v-if="element.status === 'received' && element.posizione === 'last' " id="ultimo_accesso">
                                Ultimo accesso oggi alle {{element.data}}
                             </div>
                         </div>

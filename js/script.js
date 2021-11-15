@@ -1,6 +1,7 @@
 var applicazione = new Vue ({
     el: "#app",
     data : {
+
         contatti: [
             // Michele
             {
@@ -21,7 +22,8 @@ var applicazione = new Vue ({
                     {
                         data : "15/11/2021  16:02:34",
                         text : "Tutto fatto!",
-                        status: "received"
+                        status: "received",
+                        posizione :"last"
                     }
                 ]
             },
@@ -35,12 +37,14 @@ var applicazione = new Vue ({
                     {
                         data : "14/11/2021  18:02:14",
                         text : "Ciao, come stai ?",
-                        status: "sent"
+                        status: "sent",
                     },
                     {
                         data : "14/11/2021  20:12:39",
                         text : "Bene grazie ! Stasera ci vediamo?",
-                        status: "received"
+                        status: "received",
+                        posizione :"last"
+
                     },
                     {
                         data : "14/11/2021  20:22:56",
@@ -59,7 +63,9 @@ var applicazione = new Vue ({
                     {
                         data : "13/11/2021  09:02:14",
                         text : "La Marianna va in campagna",
-                        status: "received"
+                        status: "received",
+                        posizione :""
+
                     },
                     {
                         data : "13/11/2021  11:15:39",
@@ -69,7 +75,9 @@ var applicazione = new Vue ({
                     {
                         data : "13/11/2021  13:27:56",
                         text : "Ah scusa!",
-                        status: "received"
+                        status: "received",
+                        posizione :"last"
+
                     }
                 ]
             },
@@ -77,7 +85,7 @@ var applicazione = new Vue ({
             // Luisa
             {
                 nome:"Luisa",
-                immagine: "img/avatar_4.jpg",
+                immagine: "img/avatar_io.jpg",
                 visibile: false,
                 messages : [
                     {
@@ -86,9 +94,11 @@ var applicazione = new Vue ({
                         status: "sent"
                     },
                     {
-                        data : "13/11/2021  13:27:56",
+                        data : "13/11/2021  13:13:36",
                         text : "Si, ma preferirei andare al cinema",
-                        status: "received"
+                        status: "received",
+                        posizione :"last"
+                        
                     }
                 ]
             }
