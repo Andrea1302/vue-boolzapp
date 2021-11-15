@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+}
+
+/* Sfondi  */
+#sfondo{
+    height: 100vh;
+    position: relative;
+}
+#sfondo_top{
+    height: 20vh;
+    background-color: #00bfa5;
+}
+#sfondo_main{
+    background-color: #d4dbd9;
+    height: 80vh;
+}
+
+.container{
+    height: 90vh;
+    position: absolute;
+    top: 30px;
+    background-color: white;
+    width: 94%;
+    left: 3%;
+}
