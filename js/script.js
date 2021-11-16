@@ -114,18 +114,32 @@ var applicazione = new Vue ({
             }
         },
         invio(event){
+           
             let messaggioDaInviare = {
                 data: "14/11/2022  14:30:35",
                 text : event.target.value,
                 status : "sent",
             }
 
+            let messaggioRicevuto = {
+
+                data: "14/11/2022  14:30:36",
+                text : "ok",
+                status : "received",
+                posizione : "last"
+            }
             this.contatti.find((element)=>{
                 if ( element.visibile === true) {
-                    element.messages.push(messaggioDaInviare)
+                    element.messages.push(messaggioDaInviare);
+                    setTimeout(()=> element.messages.push(messaggioRicevuto),1000);
                 }
+
+
+                
             })
-        }
+        },
+        
+        
     }
 
 
