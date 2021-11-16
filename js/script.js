@@ -1,3 +1,7 @@
+let now = new Date().toUTCString()
+console.log(now);
+
+
 var applicazione = new Vue ({
     el: "#app",
     data : {
@@ -114,28 +118,35 @@ var applicazione = new Vue ({
             }
         },
         invio(event){
-           
+            now = new Date().toUTCString();
             let messaggioDaInviare = {
-                data: "14/11/2022  14:30:35",
+                data: now,
                 text : event.target.value,
                 status : "sent",
             }
 
             let messaggioRicevuto = {
 
-                data: "14/11/2022  14:30:36",
+                data: now,
                 text : "ok",
                 status : "received",
                 posizione : "last"
             }
             this.contatti.find((element)=>{
                 if ( element.visibile === true) {
+                    element.messages.find((proprieta)=>{
+                        if ( proprieta.posizione === "last"){
+                            proprieta.posizione = ""
+                        }
+                    })
+                }
+
+            })
+            this.contatti.find((element)=>{
+                if ( element.visibile === true) {
                     element.messages.push(messaggioDaInviare);
                     setTimeout(()=> element.messages.push(messaggioRicevuto),1000);
                 }
-
-
-                
             })
         },
         
