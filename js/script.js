@@ -112,6 +112,19 @@ var applicazione = new Vue ({
              if (this.contatti[iterazione].visibile === false ){
                 this.contatti[iterazione].visibile = true
             }
+        },
+        invio(event){
+            let messaggioDaInviare = {
+                data: "14/11/2022  14:30:35",
+                text : event.target.value,
+                status : "sent",
+            }
+
+            this.contatti.find((element)=>{
+                if ( element.visibile === true) {
+                    element.messages.push(messaggioDaInviare)
+                }
+            })
         }
     }
 

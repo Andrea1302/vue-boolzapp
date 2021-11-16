@@ -71,7 +71,7 @@
 
                 <!-- section chat  -->
                 <section id="container_chat">
-                    <div @click="activeChat(i)" class="chat" v-for="(contatto,i) in contatti" :key="i" >
+                    <div @click="activeChat(i)"  class="chat" v-for="(contatto,i) in contatti" :key="i" >
                         <!-- immagine chat utente  -->
                         <img class="img_chat" :src="contatto.immagine" alt="contatto.nome" >
                         <div id="messaggio_e_data">
@@ -140,9 +140,9 @@
 
 
                 <!-- sezione input invio messaggi -->
-                <section id="send_message">
+                <section id="send_message" > 
                     <i class="icon_message far fa-smile"></i>
-                    <input id="send_message_input" placeholder="Scrivi un messaggio" type="text">
+                    <input @keyup.enter="invio($event)" id="send_message_input" placeholder="Scrivi un messaggio" type="text">
                     <i class="icon_message fas fa-microphone"></i>
                 </section>
             </main>
