@@ -5,7 +5,7 @@ console.log(now);
 var applicazione = new Vue ({
     el: "#app",
     data : {
-
+        ricercaChat : "",
         contatti: [
             // Michele
             {
@@ -148,10 +148,16 @@ var applicazione = new Vue ({
                     setTimeout(()=> element.messages.push(messaggioRicevuto),1000);
                 }
             })
+
+            let element = document.querySelector('#visual_open_chat');
+            element.scrollTop = element.scrollHeight - element.clientHeight;
         },
-        
+        miaFunzione(event){
+            this.ricercaChat = event.target.value
+        }
         
     }
 
 
 })
+
