@@ -164,7 +164,7 @@ var applicazione = new Vue ({
                 }
             })
 
-            let element = document.querySelector('#visual_open_chat');
+            let element = document.querySelector('#layover_open_chat');
             element.scrollTop = element.scrollHeight - element.clientHeight;
             event.target.value = "";
         },

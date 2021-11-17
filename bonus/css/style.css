@@ -160,8 +160,6 @@ body{
 #main_chat{
     height: 100%;
     width: 65%;
-    /* debug */
-    background-color: rgba(216, 191, 216, 0.342);
     border-left:1px solid #ccc ;
 }
 
@@ -187,12 +185,18 @@ body{
     }
 
     /* visualizzazione chat  */
+    #layover_open_chat{
+        width: 100%;
+        height: 100%;
+        background-color: #e5ddd5ab;
+        padding: 40px;
+        overflow-y: scroll;
+
+    }
     #visual_open_chat{
         width: 100%;
         height: 80%;
         background-image: url(../img/whatzapp.jpg);
-        padding: 40px;
-        overflow-y: scroll;
     }
 
         #sent{

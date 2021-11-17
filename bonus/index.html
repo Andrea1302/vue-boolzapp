@@ -127,32 +127,37 @@
                 </section>
 
                 <!-- visualizzazione chat  -->
-                <section  id="visual_open_chat" v-for="(contatto,i) in contatti" v-if="contatto.visibile === true" :key="i">
 
-                    <div v-for="(messaggio,i) in contatto.messages" :id="messaggio.status === 'sent' ? 'sent' : 'received' ">
-                        <div>
-                             <span>{{messaggio.text}}</span>
-                            <div class="data_invio"> {{messaggio.data}}  
-                                <span @click="sel_info(i)"><i  class="fas fa-chevron-down"></i></span>
-                                <div class="info_delete" :id="messaggio.activeInfo === true ? 'active_info' : '' " :key="i">
-                                    <div class="section_info_delet" @click="infoMessaggio(i)" >
-                                        Info messaggio
-                                        
-                                    </div>
-                                    <div class="section_info_delet" @click="deleteMessage(i)">
-                                        Cancella messaggio
+                <section  id="visual_open_chat" v-for="(contatto,i) in contatti" v-if="contatto.visibile === true" :key="i">
+                    <div id="layover_open_chat">
+                    
+                    
+                        <div v-for="(messaggio,i) in contatto.messages" :id="messaggio.status === 'sent' ? 'sent' : 'received' ">
+                            <div>
+                                <span>{{messaggio.text}}</span>
+                                <div class="data_invio"> {{messaggio.data}}  
+                                    <span @click="sel_info(i)"><i  class="fas fa-chevron-down"></i></span>
+                                    <div class="info_delete" :id="messaggio.activeInfo === true ? 'active_info' : '' " :key="i">
+                                        <div class="section_info_delet" @click="infoMessaggio(i)" >
+                                            Info messaggio
+                                            
+                                        </div>
+                                        <div class="section_info_delet" @click="deleteMessage(i)">
+                                            Cancella messaggio
+                                        </div>
                                     </div>
                                 </div>
+                                
                             </div>
                             
                         </div>
-                        
-                    </div>
-                   
                     
+                    </div>
+                
                 </section>
+                
 
-
+                
                 <!-- sezione input invio messaggi -->
                 <section id="send_message" > 
                     <i class="icon_message far fa-smile"></i>
