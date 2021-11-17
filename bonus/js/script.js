@@ -167,6 +167,7 @@ var applicazione = new Vue ({
 
             let element = document.querySelector('#visual_open_chat');
             element.scrollTop = element.scrollHeight - element.clientHeight;
+            event.target.value = "";
         },
         miaFunzione(event){
             this.ricercaChat = event.target.value
