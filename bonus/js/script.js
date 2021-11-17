@@ -186,7 +186,11 @@ var applicazione = new Vue ({
             
         },
         infoMessaggio(iterazione){
-                // alert(`Ultimo messaggio da ${this.contatti[iterazione].nome} il ${this.contatti[iterazione].messages.data}`)
+            this.contatti.find((element)=>{
+                if ( element.visibile === true) {
+                    alert(`Messaggio inviato da ${element.nome}, il ${element.messages[iterazione].data}`)
+                }
+            })
             
         },
         deleteMessage(iterazione){

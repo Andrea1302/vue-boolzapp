@@ -246,15 +246,9 @@ body{
         #active_info{
             display: block;
         }
-        /* #info{
-            z-index: 5;
-            width: 300px;
-            height: 300px;
-            position: absolute;
-            right: 20px;
-            top: 80px;
-            font-size: 30px;
-        } */
+        .fas.fa-chevron-down{
+            cursor: pointer;
+        }
     /* sezione invio messaggi  */
     #send_message{
         width: 100%;
