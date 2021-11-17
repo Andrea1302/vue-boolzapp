@@ -10,7 +10,6 @@ var applicazione = new Vue ({
         contatti: [
             // Michele
             {   
-                activeInfo : false,
                 nome:"Michele",
                 immagine: "img/avatar_1.jpg",
                 visibile: true,
@@ -19,24 +18,29 @@ var applicazione = new Vue ({
                         data : "15/11/2021  14:59:34",
                         text : "Hai portato a spasso il cane?",
                         status: "sent",
+                        activeInfo : false,
+
                     },
                     {
                         data : "15/11/2021  15:12:39",
                         text : "Ricordati di dargli da mangiare",
                         status: "sent",
+                        activeInfo : false,
+
                     },
                     {
                         data : "15/11/2021  16:02:34",
                         text : "Tutto fatto!",
                         status: "received",
                         posizione :"last",
+                        activeInfo : false,
+
                     }
                 ]
             },
 
             // Fabio 
             {
-                activeInfo : false,
                 nome:"Fabio",
                 immagine: "img/avatar_2.jpg",
                 visibile: false,
@@ -45,20 +49,21 @@ var applicazione = new Vue ({
                         data : "14/11/2021  18:02:14",
                         text : "Ciao, come stai ?",
                         status: "sent",
+                        activeInfo : false,
+
                     },
                     {
                         data : "14/11/2021  20:12:39",
                         text : "Bene grazie ! Stasera ci vediamo?",
                         status: "received",
                         posizione :"last",
-
-
+                        activeInfo : false,
                     },
                     {
                         data : "14/11/2021  20:22:56",
                         text : "Mi piacerebbe, ma devo andare a fare la spesa.",
                         status: "sent",
-
+                        activeInfo : false,
                     }
                 ]
             },
@@ -75,20 +80,20 @@ var applicazione = new Vue ({
                         text : "La Marianna va in campagna",
                         status: "received",
                         posizione :"",
-
-
+                        activeInfo : false,
                     },
                     {
                         data : "13/11/2021  11:15:39",
                         text : "Sicuro di non aver sbagliato chat?",
                         status: "sent",
-
+                        activeInfo : false,
                     },
                     {
                         data : "13/11/2021  13:27:56",
                         text : "Ah scusa!",
                         status: "received",
                         posizione :"last",
+                        activeInfo : false,
                     }
                 ]
             },
@@ -104,13 +109,14 @@ var applicazione = new Vue ({
                         data : "13/11/2021  10:12:14",
                         text : "Lo sai che ha aperto una nuova pizzeria?",
                         status: "sent",
+                        activeInfo : false,
                     },
                     {
                         data : "13/11/2021  13:13:36",
                         text : "Si, ma preferirei andare al cinema",
                         status: "received",
                         posizione :"last",
-                        
+                        activeInfo : false,
                     }
                 ]
             }
@@ -131,6 +137,7 @@ var applicazione = new Vue ({
                 data: now,
                 text : event.target.value,
                 status : "sent",
+                activeInfo : false,
             }
 
             let messaggioRicevuto = {
@@ -138,7 +145,8 @@ var applicazione = new Vue ({
                 data: now,
                 text : "ok",
                 status : "received",
-                posizione : "last"
+                posizione : "last",
+                activeInfo : false,
             }
             this.contatti.find((element)=>{
                 if ( element.visibile === true) {
@@ -164,26 +172,30 @@ var applicazione = new Vue ({
             this.ricercaChat = event.target.value
         },
         sel_info(iterazione){
-            if (this.contatti[iterazione].activeInfo === false){
-                this.contatti[iterazione].activeInfo = true
-            } else if (this.contatti[iterazione].activeInfo === true ){
-                this.contatti[iterazione].activeInfo = false
-            }
-            
+            console.log(iterazione);
+            this.contatti.find((element)=>{
+                if ( element.visibile === true ){
+                    if (element.messages[iterazione].activeInfo === false){
+                        element.messages[iterazione].activeInfo = true;
+                    } else if (element.messages[iterazione].activeInfo === true){
+                        element.messages[iterazione].activeInfo = false;
+
+                    }
+                }
+            })
             
         },
-        // infoMessaggio(iterazione){
-        //         alert(`Ultimo messaggio da ${this.contatti[iterazione].nome} il ${this.contatti[iterazione].messages.data}`)
+        infoMessaggio(iterazione){
+                // alert(`Ultimo messaggio da ${this.contatti[iterazione].nome} il ${this.contatti[iterazione].messages.data}`)
             
-        // },
-        // deleteMessage(iterazione){
-        //     this.contatti.find((element)=>{
-        //         if ( element.visibile === true) {
-        //             element.messages.splice(iterazione,1);
-        //             this.contatti[iterazione].activeInfo = false
-        //         }
-        //     })
-        // }
+        },
+        deleteMessage(iterazione){
+            this.contatti.find((element)=>{
+                if ( element.visibile === true) {
+                    element.messages.splice(iterazione,1);
+                }
+            })
+        }
 
         
     }

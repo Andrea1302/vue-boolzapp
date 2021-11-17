@@ -81,12 +81,12 @@
                                     {{contatto.nome}}
                                 </span>
                                 <!-- messaggio  -->
-                                <p>
+                                <p v-if="contatto.messages.length > 0">
                                     {{contatto.messages[contatto.messages.length -1].text}}...
                                 </p>
                             </div>
 
-                            <div id="data_now">
+                            <div id="data_now" v-if="contatto.messages.length > 0">
                                 {{contatto.messages[contatto.messages.length -1].data}}
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                              <span>{{messaggio.text}}</span>
                             <div class="data_invio"> {{messaggio.data}}  
                                 <span @click="sel_info(i)"><i  class="fas fa-chevron-down"></i></span>
-                                <div class="info_delete" :id="contatti[i].activeInfo === true ? 'active_info' : '' " :key="i">
+                                <div class="info_delete" :id="messaggio.activeInfo === true ? 'active_info' : '' " :key="i">
                                     <div class="section_info_delet" @click="infoMessaggio(i)" >
                                         Info messaggio
                                         
@@ -142,10 +142,6 @@
                                     <div class="section_info_delet" @click="deleteMessage(i)">
                                         Cancella messaggio
                                     </div>
-
-                                     <div id="info">
-                                        Messaggio inviato il {{messaggio.data}} da {{contatto.nome}}
-                                    </div>  
                                 </div>
                             </div>
                             
