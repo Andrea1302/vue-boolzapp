@@ -163,7 +163,27 @@ var applicazione = new Vue ({
         miaFunzione(event){
             this.ricercaChat = event.target.value
         },
-        
+        sel_info(iterazione){
+            if (this.contatti[iterazione].activeInfo === false){
+                this.contatti[iterazione].activeInfo = true
+            } else if (this.contatti[iterazione].activeInfo === true ){
+                this.contatti[iterazione].activeInfo = false
+            }
+            
+            
+        },
+        // infoMessaggio(iterazione){
+        //         alert(`Ultimo messaggio da ${this.contatti[iterazione].nome} il ${this.contatti[iterazione].messages.data}`)
+            
+        // },
+        // deleteMessage(iterazione){
+        //     this.contatti.find((element)=>{
+        //         if ( element.visibile === true) {
+        //             element.messages.splice(iterazione,1);
+        //             this.contatti[iterazione].activeInfo = false
+        //         }
+        //     })
+        // }
 
         
     }

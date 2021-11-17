@@ -133,8 +133,20 @@
                         <div>
                              <span>{{messaggio.text}}</span>
                             <div class="data_invio"> {{messaggio.data}}  
-                                <span><i  class="fas fa-chevron-down"></i></span>
-                               
+                                <span @click="sel_info(i)"><i  class="fas fa-chevron-down"></i></span>
+                                <div class="info_delete" :id="contatti[i].activeInfo === true ? 'active_info' : '' " :key="i">
+                                    <div class="section_info_delet" @click="infoMessaggio(i)" >
+                                        Info messaggio
+                                        
+                                    </div>
+                                    <div class="section_info_delet" @click="deleteMessage(i)">
+                                        Cancella messaggio
+                                    </div>
+
+                                     <div id="info">
+                                        Messaggio inviato il {{messaggio.data}} da {{contatto.nome}}
+                                    </div>  
+                                </div>
                             </div>
                             
                         </div>
