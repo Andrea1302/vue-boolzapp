@@ -1,5 +1,4 @@
-let now = new Date().toUTCString()
-console.log(now);
+let now = new Date().toUTCString();
 
 
 var applicazione = new Vue ({
@@ -124,7 +123,7 @@ var applicazione = new Vue ({
     },
     methods : {
         activeChat(iterazione){
-            this.contatti.find((element)=>{
+            this.contatti.forEach((element)=>{
                 element.visibile = false
             })
              if (this.contatti[iterazione].visibile === false ){
@@ -148,7 +147,7 @@ var applicazione = new Vue ({
                 posizione : "last",
                 activeInfo : false,
             }
-            this.contatti.find((element)=>{
+            this.contatti.forEach((element)=>{
                 if ( element.visibile === true) {
                     element.messages.find((proprieta)=>{
                         if ( proprieta.posizione === "last"){
@@ -158,7 +157,7 @@ var applicazione = new Vue ({
                 }
 
             })
-            this.contatti.find((element)=>{
+            this.contatti.forEach((element)=>{
                 if ( element.visibile === true) {
                     element.messages.push(messaggioDaInviare);
                     setTimeout(()=> element.messages.push(messaggioRicevuto),1000);
@@ -173,8 +172,7 @@ var applicazione = new Vue ({
             this.ricercaChat = event.target.value
         },
         sel_info(iterazione){
-            console.log(iterazione);
-            this.contatti.find((element)=>{
+            this.contatti.forEach((element)=>{
                 if ( element.visibile === true ){
                     if (element.messages[iterazione].activeInfo === false){
                         element.messages[iterazione].activeInfo = true;
@@ -187,7 +185,7 @@ var applicazione = new Vue ({
             
         },
         infoMessaggio(iterazione){
-            this.contatti.find((element)=>{
+            this.contatti.forEach((element)=>{
                 if ( element.visibile === true) {
                     alert(`Messaggio inviato da ${element.nome}, il ${element.messages[iterazione].data}`)
                 }
@@ -195,14 +193,12 @@ var applicazione = new Vue ({
             
         },
         deleteMessage(iterazione){
-            this.contatti.find((element)=>{
+            this.contatti.forEach((element)=>{
                 if ( element.visibile === true) {
                     element.messages.splice(iterazione,1);
                 }
             })
-        }
-
-        
+        },
     }
 
 

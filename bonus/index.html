@@ -127,7 +127,7 @@
                 </section>
 
                 <!-- visualizzazione chat  -->
-                <section id="visual_open_chat" v-for="(contatto,i) in contatti" v-if="contatto.visibile === true" :key="i">
+                <section  id="visual_open_chat" v-for="(contatto,i) in contatti" v-if="contatto.visibile === true" :key="i">
 
                     <div v-for="(messaggio,i) in contatto.messages" :id="messaggio.status === 'sent' ? 'sent' : 'received' ">
                         <div>
