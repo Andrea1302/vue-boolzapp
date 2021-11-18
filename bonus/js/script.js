@@ -169,8 +169,9 @@ var applicazione = new Vue ({
                     element.messages.push(messaggioDaInviare);
                     setTimeout(()=> element.messages.push(messaggioRicevuto),1000);
                 }
-            })
+                
 
+            })
             let element = document.querySelector('#layover_open_chat');
             element.scrollTop = element.scrollHeight - element.clientHeight;
             event.target.value = "";
@@ -255,7 +256,20 @@ var applicazione = new Vue ({
             if ( this.changeImage === false){
                 this.changeImage = true
             }
+        },
+        newMessage(){
+            let nuovoNomeNuovaChat =prompt("Inserisci il nuovo nome o il numero di telefono")
+            let nuovaChat = {   
+                nome:nuovoNomeNuovaChat,
+                immagine: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png",
+                visibile: false,
+                messages : [
+                    
+                ]
+            }
+            this.contatti.push(nuovaChat)
         }
+    
     }
 
 

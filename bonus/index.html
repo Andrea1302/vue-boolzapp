@@ -38,7 +38,7 @@
 
                     <div class="icone_nav">
                         <i @click="statoUtente" class="icone fas fa-power-off" :id=" online === false ? 'offline' : '' "></i>
-                        <i class="icone fas fa-comment-alt"></i>
+                        <i class="icone fas fa-comment-alt" @click="newMessage"></i>
                         <i id="settingUser" class="icone fas fa-ellipsis-v" @click="settingUser"> </i>
                          
                         <div class="container_setting_user_click"  :id="setting ? 'setting_active' : '' ">
