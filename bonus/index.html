@@ -97,7 +97,7 @@
 
                 <!-- section chat  -->
                 <section id="container_chat">
-                    <div @click="activeChat(i)" v-if="contatto.nome.toLowerCase().includes(ricercaChat.toLowerCase())"  class="chat" v-for="(contatto,i) in contatti" :key="i" >
+                    <div @click="activeChat(i)" v-if="(contatto.nome.toLowerCase().includes(ricercaChat.toLowerCase())) && (statusActive === true)"   class="chat" v-for="(contatto,i) in contatti" :key="i" >
                         <!-- immagine chat utente  -->
                         <img class="img_chat" :src="contatto.immagine" alt="contatto.nome" >
                         <div id="messaggio_e_data">
@@ -127,7 +127,7 @@
             <main id="main_chat" > 
                 <!-- chat aperta con? -->
                 <section id="open_chat_name">
-                    <div id="open_chat_left" v-if="contatto.visibile === true"  v-for="(contatto,i) in contatti" :key="i">
+                    <div  id="open_chat_left" v-if="(contatto.visibile === true) && (statusActive === true)"  v-for="(contatto,i) in contatti" :key="i">
                         <img class="img_chat" :src="contatto.immagine" :alt="contatto.nome">
 
                         <div>
@@ -158,7 +158,7 @@
                     <div id="layover_open_chat">
                     
                     
-                        <div v-for="(messaggio,i) in contatto.messages" :id="messaggio.status === 'sent' ? 'sent' : 'received' ">
+                        <div v-if="statusActive === true" v-for="(messaggio,i) in contatto.messages" :id="messaggio.status === 'sent' ? 'sent' : 'received' ">
                             <div>
                                 <span>{{messaggio.text}}</span>
                                 <div class="data_invio"> {{messaggio.data}}  

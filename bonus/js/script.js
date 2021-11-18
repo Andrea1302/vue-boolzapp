@@ -4,6 +4,7 @@ let now = new Date().toUTCString();
 var applicazione = new Vue ({
     el: "#app",
     data : {
+        statusActive : true,
         imageUser : 'img/avatar_4.jpg',
         newImage : "",
         changeImage : false,
@@ -208,7 +209,11 @@ var applicazione = new Vue ({
             })
         },
         statoUtente(){
-            console.log("ok");
+            if ( this.statusActive === true){
+                this.statusActive = false
+            } else {
+                this.statusActive = true
+            }
             if ( this.online === true ){
                 this.online = false
             } else if (this.online === false ) {
