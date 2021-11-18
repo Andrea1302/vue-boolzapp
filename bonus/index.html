@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="icone_nav">
-                        <i class="icone fas fa-power-off"></i>
+                        <i @click="statoUtente" class="icone fas fa-power-off" :id=" online === false ? 'offline' : '' "></i>
                         <i class="icone fas fa-comment-alt"></i>
                         <i class="icone fas fa-ellipsis-v"></i>
                     </div>

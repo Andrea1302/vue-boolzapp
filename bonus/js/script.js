@@ -4,7 +4,7 @@ let now = new Date().toUTCString();
 var applicazione = new Vue ({
     el: "#app",
     data : {
-        
+        online : true,
         ricercaChat : "",
         contatti: [
             // Michele
@@ -199,6 +199,14 @@ var applicazione = new Vue ({
                 }
             })
         },
+        statoUtente(){
+            console.log("ok");
+            if ( this.online === true ){
+                this.online = false
+            } else if (this.online === false ) {
+                this.online = true
+            }
+        }
     }
 
 

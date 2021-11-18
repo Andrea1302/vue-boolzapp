@@ -40,6 +40,10 @@ body{
     width: 35%;
     
 }
+/* status  */
+#offline{
+    color: red;
+}
 /* classe generale img  */
 .avatar{
     width: 50px;
