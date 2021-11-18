@@ -80,6 +80,65 @@ body{
             font-size: 20px;
         }
 
+        /* bonus Utente  */
+        #settingUser{
+            position: relative;
+        }
+        .container_setting_user_click{
+            position: absolute;
+            top: 45px;
+            width: 200px;
+            color: black;
+            background-color: white;
+            box-shadow: 0px 0px 4px 0px black;            
+            font-size: .8rem;
+            display: none;
+        }
+        .dimensioni_single_setting_user{
+            padding: 5px 5px;
+            cursor: pointer;
+        }
+        #cambia_Nome_utente{
+            background-color: rgb(240, 235, 235);
+            position: relative;
+        }
+        #setting_active{
+            display: block;
+        }
+        /* new name  */
+        .container_new_name{
+            background-color:rgb(240, 235, 235);
+            padding: 20px;
+            z-index: 10;
+            width: 600px;
+            height: 200px;
+            position: absolute;
+            top: 30px;
+            left: 100px;
+            box-shadow: 0px 0px 4px 0px black;    
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;  
+            align-items: center;
+            display: none;   
+        }
+        .container_new_name h3{
+            font-size: 30px;
+        }
+        #new_name{
+            width: 100%;
+            padding: 20px 5px;
+            font-size: 25px;
+        }
+        #new_name_active{
+            display: block;
+        }
+        #close{
+            text-align: end;
+            color: red;
+            cursor: pointer;
+        }
+
     /* notifiche  */
     #notifiche{
         width: 100%;
@@ -286,4 +345,10 @@ body{
     background-color:rgba(0, 0, 0, 0.068);
     cursor: pointer;
 }
-
+.dimensioni_single_setting_user:hover{
+    background-color: black;
+    color: white;
+}
+#cambia_Nome_utente:hover{
+    background-color: black;
+}

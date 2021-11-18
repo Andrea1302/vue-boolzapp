@@ -4,6 +4,10 @@ let now = new Date().toUTCString();
 var applicazione = new Vue ({
     el: "#app",
     data : {
+        UserName : 'Nome Utente',
+        newName : "",
+        changeUserName : false,
+        setting : false,
         online : true,
         ricercaChat : "",
         contatti: [
@@ -206,6 +210,27 @@ var applicazione = new Vue ({
             } else if (this.online === false ) {
                 this.online = true
             }
+        },
+        settingUser(){
+            if (this.setting === false) {
+                this.setting = true
+            } else if ( this.setting === true ) {
+                this.setting = false
+            }
+        },
+        cambiaUserName(){
+            if ( this.changeUserName === false){
+                this.changeUserName = true
+            } 
+        },
+        toCloseChangeUserName(){
+            this.changeUserName = false;
+            this.setting = false
+        },
+        invioNewName(){
+            this.UserName = this.newName;
+            this.changeUserName = false;
+            this.setting = false
         }
     }
 
