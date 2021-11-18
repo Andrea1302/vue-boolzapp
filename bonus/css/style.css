@@ -42,7 +42,7 @@ body{
 }
 /* status  */
 #offline{
-    color: red;
+    color: rgb(117, 15, 15);
 }
 /* classe generale img  */
 .avatar{
