@@ -32,7 +32,7 @@
                 <!-- section nome utente  -->
                 <section id="nome_utente">
                     <div id="nome_e_immagine">
-                        <img class="avatar" src="img/avatar_4.jpg" alt="avatar4">
+                        <img class="avatar" :src="imageUser" alt="avatar4">
                         <span id="nome">{{UserName}}</span>
                     </div>
 
@@ -45,15 +45,23 @@
                             <div class="dimensioni_single_setting_user" id="cambia_Nome_utente" @click="cambiaUserName">
                                 Cambia nome Utente
                             </div>
-                            <div class="dimensioni_single_setting_user">
+                            <div class="dimensioni_single_setting_user" @click="cambiaImage">
                                 Cambia immagine profilo
                             </div>
-                            <div class="container_new_name" :id="changeUserName ? 'new_name_active' : '' ">
-                                <div id="close" @click="toCloseChangeUserName">
+                            <div class="container_new" :id="changeUserName ? 'new_name_active' : '' ">
+                                <div class="close" @click="toCloseChangeUserName">
                                     <i  class="fas fa-times"></i>
                                 </div>
                                 <h3>Inserisci il tuo nuovo nome utente</h3>
-                                <input id="new_name" type="text" v-model="newName" @keyup.enter="invioNewName">
+                                <input class="new" type="text" v-model="newName" @keyup.enter="invioNewName">
+                            </div>
+
+                            <div class="container_new" :id="changeImage ? 'new_image_active' : '' ">
+                                <div class="close" @click="toCloseChangeImage">
+                                    <i  class="fas fa-times"></i>
+                                </div>
+                                <h3>Inserisci il link della tua nuova immagine</h3>
+                                <input class="new" type="text" v-model="newImage" @keyup.enter="invioNewImage">
                             </div>
                         </div>
 

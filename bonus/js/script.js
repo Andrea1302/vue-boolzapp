@@ -4,6 +4,9 @@ let now = new Date().toUTCString();
 var applicazione = new Vue ({
     el: "#app",
     data : {
+        imageUser : 'img/avatar_4.jpg',
+        newImage : "",
+        changeImage : false,
         UserName : 'Nome Utente',
         newName : "",
         changeUserName : false,
@@ -231,6 +234,27 @@ var applicazione = new Vue ({
             this.UserName = this.newName;
             this.changeUserName = false;
             this.setting = false
+            this.newName = "";
+
+        },
+        invioNewImage(){
+            this.changeImage = false;
+            this.setting = false
+            if ( !this.newImage){
+                this.imageUser = 'img/avatar_4.jpg'
+            } else {
+                this.imageUser = this.newImage;
+            }
+            
+        },
+        toCloseChangeImage(){
+            this.changeImage = false;
+            this.setting = false
+        },
+        cambiaImage(){
+            if ( this.changeImage === false){
+                this.changeImage = true
+            }
         }
     }
 

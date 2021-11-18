@@ -47,8 +47,9 @@ body{
 /* classe generale img  */
 .avatar{
     width: 50px;
-    height: auto;
+    height: 50px;
     border-radius: 50%;
+    object-fit: cover;
 }
     /* nome utente  */
     #nome_utente{
@@ -86,7 +87,7 @@ body{
         }
         .container_setting_user_click{
             position: absolute;
-            top: 45px;
+            top: 55px;
             width: 200px;
             color: black;
             background-color: white;
@@ -106,7 +107,7 @@ body{
             display: block;
         }
         /* new name  */
-        .container_new_name{
+        .container_new{
             background-color:rgb(240, 235, 235);
             padding: 20px;
             z-index: 10;
@@ -122,10 +123,10 @@ body{
             align-items: center;
             display: none;   
         }
-        .container_new_name h3{
+        .container_new h3{
             font-size: 30px;
         }
-        #new_name{
+        .new{
             width: 100%;
             padding: 20px 5px;
             font-size: 25px;
@@ -133,7 +134,10 @@ body{
         #new_name_active{
             display: block;
         }
-        #close{
+        #new_image_active {
+            display: block;
+        }
+        .close{
             text-align: end;
             color: red;
             cursor: pointer;
