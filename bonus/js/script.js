@@ -273,6 +273,18 @@ var applicazione = new Vue ({
                 ]
             }
             this.contatti.push(nuovaChat)
+        },
+        CreateNewChat(event){
+            let nuovaChat = {   
+                nome: this.ricercaChat,
+                immagine: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png",
+                visibile: false,
+                messages : [
+                    
+                ]
+            }
+            this.contatti.push(nuovaChat);
+            event.target.value = "";
         }
     
     }

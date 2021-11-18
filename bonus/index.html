@@ -92,7 +92,7 @@
                     <div id="icon_search">
                         <i class="icone fas fa-search"></i>
                     </div>
-                    <input id="input_search" @keyup="miaFunzione($event)" v-model="ricercaChat" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input id="input_search" @keyup.enter="CreateNewChat($event)" @keyup="miaFunzione($event)" v-model="ricercaChat" type="text" placeholder="Cerca o inizia una nuova chat">
                 </section>
 
                 <!-- section chat  -->
